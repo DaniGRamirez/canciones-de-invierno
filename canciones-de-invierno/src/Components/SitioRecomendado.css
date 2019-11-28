@@ -1,0 +1,10 @@
+#imgSitio{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+.sitioContainer{
+    padding: 4rem;
+    flex-basis: 30%;
+}
