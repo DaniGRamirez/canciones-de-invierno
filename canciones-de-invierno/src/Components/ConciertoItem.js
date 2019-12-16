@@ -12,7 +12,7 @@ class ConciertoItem extends Component {
         let date = new Date(this.props.conciertoData.fecha); 
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };   
         let finalDate = date.toLocaleDateString("es-ES", options)           
-    
+        console.log(this.props);
         return(         
             <div  className="conciertoContent">                
                 <div  className="conciertoData">    
@@ -20,8 +20,8 @@ class ConciertoItem extends Component {
                     <h2> {this.props.conciertoData.subtitulo} </h2>               
                 </div> 
                 <div  className="artistaContent">                           
-                    <div className="descripcionArtista">{formatHtmlText(this.props.conciertoData.artista.descripcion.html)}</div>       
-                    <img width="100px" height="100px" src={this.props.conciertoData.artista.foto.url}/>           
+                    <div className="descripcionArtista">{formatHtmlText(this.props.conciertoData.artista[0].descripcion.html)}</div>       
+                    <img width="100px" height="100px" src={this.props.conciertoData.artista[0].foto.url}/>           
                 </div>                     
                 <div  className="fechaContent">    
                     <p> {finalDate} </p>
