@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "./Inicio.css"; 
+import Cartel from "../Pages/Cartel"
 
 
 
@@ -18,9 +19,9 @@ export default class Inicio extends Component {
       fade:true
     };
     return (
-      <div>
-        <h1> Canciones de Invierno</h1>        
-        <Slider {...settings}>
+      <div>      
+        <Cartel/>
+        {/* <Slider {...settings}>
           <div>
            <img src="https://www.terranostrum.es/images/content/full/paseo-arenas-san-pedro-1.jpg"></img>           
           </div>   
@@ -30,7 +31,7 @@ export default class Inicio extends Component {
           <div>
            <img src="https://www.terranostrum.es/images/content/full/paseo-arenas-san-pedro-15.jpg"></img>           
           </div>           
-        </Slider>
+        </Slider> */}
       </div>
     );
   }

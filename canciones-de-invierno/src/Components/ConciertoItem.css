@@ -1,44 +1,37 @@
-.artistaContent{
-    display: flex;
-}
 
-.artistaContent img{
-    margin: auto;
-    border-radius: 100%;
-    width: 250px;
-    height: 250px;
-}
-
-.descripcionArtista{
-    flex-basis: 50%;
-    margin: auto;
-    text-align: left;
+.coompraEntradasContainer{
+    background-color: #667eea;
+    width: 30%;
+    margin-left: auto;
+    margin-right: 2rem;
 }
 
 .fechaContent{
-    width: 30%;
-    margin-left: auto;
-    margin-top: 1rem;
+    width: 80%;   
+    margin: 20px auto;  
+    padding-top: 10px;
 }
 
 .buttonBuy{
     text-align: right;
+    font-weight: bold;
 }
 
 .conciertoContent{
     background-color: #ececec;
 }
 
-.conciertoContent:nth-child(odd) {
-    background-color: #ececec;
+
+
+.todosArtistasContainer{
+    display: flex;    
 }
-.conciertoContent:nth-child(even) {
-    background-color:#c5c5c5;
-}
+
 
 .conciertoContent h1{
     margin-top :0 ;
     padding-top: 1em;
+    text-transform: uppercase;
 }
 
 .conciertoContent button{
@@ -48,10 +41,10 @@
     border: radius 0.12em; 
     box-sizing: border-box;
     text-decoration: none;
-    font-weight: 300;
+    font-weight: bold;
     text-align: center;
     transition: all 0.2s;    
-    width: 30%;
+    width: 100%;
     height: 75px;
     font-size: larger;    
 }

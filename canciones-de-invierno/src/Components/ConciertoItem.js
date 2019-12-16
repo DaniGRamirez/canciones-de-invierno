@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import './ConciertoItem.css';
 import {formatHtmlText} from '../FormatHtmlParser'
+import ArtistaItem from "../Components/ArtistaItem"
 
 class ConciertoItem extends Component {
 
@@ -17,17 +18,25 @@ class ConciertoItem extends Component {
             <div  className="conciertoContent">                
                 <div  className="conciertoData">    
                     <h1> {this.props.conciertoData.titulo} </h1>               
-                    <h2> {this.props.conciertoData.subtitulo} </h2>               
+                    {/* <h2> {this.props.conciertoData.subtitulo} </h2>                */}
                 </div> 
-                <div  className="artistaContent">                           
+                <div className="todosArtistasContainer">
+                {this.props.conciertoData.artista.map (artista => (
+                       <ArtistaItem key={artista.id} artistaData= {artista}></ArtistaItem>                        
+                    ))
+                    }
+                </div>
+                {/* <div  className="artistaContent">                           
                     <div className="descripcionArtista">{formatHtmlText(this.props.conciertoData.artista[0].descripcion.html)}</div>       
                     <img width="100px" height="100px" src={this.props.conciertoData.artista[0].foto.url}/>           
-                </div>                     
-                <div  className="fechaContent">    
-                    <p> {finalDate} </p>
-                </div>    
-                <div className="buttonBuy">
-                    <button> Comprar entradas</button>
+                </div>                      */}
+                <div className="coompraEntradasContainer">                
+                    <div  className="fechaContent">    
+                        <p> {finalDate} </p>
+                    </div>    
+                    <div className="buttonBuy">
+                        <button> Comprar entradas</button>
+                    </div>
                 </div>
             </div>                     
             ); 

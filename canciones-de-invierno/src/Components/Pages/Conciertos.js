@@ -21,7 +21,7 @@ class Conciertos extends Component {
             console.log(this.props.data);                                      
             return (    
                 <div className="ConciertosContainer">
-                    <h1>Proximos conciertos</h1>
+                    {/* <h1>Proximos conciertos</h1> */}
                    {this.props.data.conciertoes.map (concierto => (
                        <ConciertoItem key={concierto.id} conciertoData= {concierto}></ConciertoItem>                        
                     ))

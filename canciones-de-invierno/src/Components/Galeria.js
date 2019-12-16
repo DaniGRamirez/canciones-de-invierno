@@ -50,7 +50,7 @@ class Galeria extends Component {
         console.log(this.props);
         return(         
             <div  className="galeriaContent">                                               
-                    <h2> {this.props.galeriaData.titulo} </h2>    
+                    {/* <h2> {this.props.galeriaData.titulo} </h2>     */}
                     <Slider {...settings}>                      
                       {this.props.galeriaData.itemGaleria.map (assetGallery => (                     
                             this.renderGalleryItem(assetGallery)                  

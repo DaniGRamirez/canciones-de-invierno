@@ -1,0 +1,72 @@
+.artistaContainer{
+    flex-basis: 33.3%;
+    position: relative;
+    cursor: pointer;
+}
+
+.artistaContent{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.artistaContent img{
+    margin: auto;   
+    width: 100%; 
+}
+
+.nombreContainer{
+    position: relative;
+    bottom: 25%;
+    background: linear-gradient( to top, black, rgba(255, 0, 0, 0) );
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all .5s ease;
+}
+
+.artistaContainer h2{
+    margin: 0;
+    margin-bottom: 5%;
+    color: white;
+}
+
+.descripcionArtista{
+    flex-basis: 50%;
+    margin: auto;
+    text-align: left;
+}
+
+.bgOverlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #667eea86;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+  .artistaContainer:hover .bgOverlay {
+    bottom: 0;
+    height: 100%;
+  }
+
+  .artistaContainer:hover .nombreContainer {
+   /* display: none; */
+  }
+
+  .textOverlay {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
