@@ -1,5 +1,132 @@
+.ubicacionContainer {
+    margin-top: 8em;
+    background-color: #f4f4f4;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+.ubicacionContainer h1,h2{
+    text-transform: uppercase;
+}
+
 .sitiosContainer{
     display: flex;
     justify-content: center;
     align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.imgUbicacionBG{
+    position: relative;
+    background-color: black;   
+}
+
+.imgUbicacionBG img{
+    width: 100%;
+}
+
+.descBGOverlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #000000b0;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.imgUbicacionBG:hover .descBGOverlay {    
+    background-color: #000000e0;   
+}
+
+.descContainer{
+    width: 50%;
+    height: 100%;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descContainer p {    
+        
+    color: #eaeaea;
+    margin: 5%;    
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.descContainer p:first-of-type  {    
+   
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+
+@media (max-width: 1000px) {
+    .descContainer p:first-of-type  {       
+        text-transform: uppercase;
+        font-size: x-large;
+        line-height: 2rem;
+    }
+
+    .descContainer p {                 
+        margin: 3%;    
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+    }    
+}
+
+@media (max-width: 700px) {
+
+    .ubicacionContainer {
+        margin-top: 4em;
+    }    
+
+    .descContainer{
+        width: 70%;
+        height: 100%;
+        margin: auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .descContainer p:first-of-type  {       
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1.1rem;
+    }
+
+    .descContainer p {                 
+        margin: 3%;    
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+    }    
+}
+
+@media (max-width: 400px) {
+    .ubicacionContainer {
+        margin-top: 1em;
+    }    
+
+    .descContainer{
+        width: 100%;
+        height: 100%;
+        margin: auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .descContainer p:first-of-type  {       
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+
+    .descContainer p {                 
+        margin: 3%;    
+        font-size: 0.6rem;
+        line-height: 1rem;
+    }    
 }

@@ -16,14 +16,14 @@
 }
 
 .nombreContainer{
-    position: relative;
-    bottom: 25%;
-    background: linear-gradient( to top, black, rgba(255, 0, 0, 0) );
-    height: 25%;
+    position: absolute;
+    bottom: 5%;
+    background: black;   
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     transition: all .5s ease;
+   padding: 0.5rem 3rem;
 }
 
 .artistaContainer h2{
@@ -53,11 +53,7 @@
   .artistaContainer:hover .bgOverlay {
     bottom: 0;
     height: 100%;
-  }
-
-  .artistaContainer:hover .nombreContainer {
-   /* display: none; */
-  }
+  } 
 
   .textOverlay {
     color: white;
@@ -70,3 +66,18 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+  @media (max-width: 1000px) {
+    .artistaContainer{
+      flex-basis: 40%;
+    }
+}
+
+@media (max-width: 700px) {
+    .nombreContainer{      
+        font-size: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+}

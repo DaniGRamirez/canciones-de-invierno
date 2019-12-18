@@ -1,6 +1,10 @@
 
 .CartelContainer{
     
-    background-image: linear-gradient(#667eea 0%, #764ba2 100%);
+    background-image: linear-gradient(#e02275 0%, #764ba2 100%);
     padding-bottom: 10em;
+}
+
+#imgCartel{
+    width: 90%;
 }

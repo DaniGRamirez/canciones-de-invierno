@@ -2,9 +2,162 @@
     width: 200px;
     height: 200px;
     border-radius: 100%;
+    align-self: center;    
 }
 
 .sitioContainer{
-    padding: 4rem;
+    padding: 2em;
+    margin: 1em;
+    background-color: white;
     flex-basis: 30%;
+    text-align: initial;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
 }
+
+.sitioContainer h4{
+    text-transform: uppercase;
+}
+
+#direccionTitulo{
+    margin: auto 0 0 0;
+}
+
+.imgContainer{
+    margin-top: auto;
+    align-self: center;
+    position: relative;
+}
+
+.butonMapsContainer{   
+    position: absolute;    
+    bottom: -10%;
+    right: -10%;    
+}
+
+.butonMapsContainer button{
+    cursor: pointer;
+    border-radius: 100%;
+    width: 75px;
+    height: 75px;
+    border: none;
+    background-color:white;
+    border: black;    
+    border-style: solid;
+    border-width: 2px;
+    transition: all 0.5s ease;
+}
+
+.butonMapsContainer:hover button {    
+    background-color: black;
+    border-width: 0;
+}
+
+.butonMapsContainer:hover img{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+#imgMaps{
+    width: 70%;
+}
+
+@media (max-width: 1000px) {
+    .sitiosContainer{        
+        min-height: 100px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }       
+
+    .sitioContainer{
+        padding: 1rem;
+        margin: 1em;       
+        flex-basis: 40%;       
+        min-height: 400px;
+    }
+
+    .iformacionSitio {
+        flex-basis: 2fr;
+        max-height: initial;
+        font-size: 0.85em;
+    }
+
+    .butonMapsContainer{         
+        bottom: -2%;
+        right: -2%;    
+    }
+   
+    #imgSitio{
+        width: 150px;
+        height: 150px;        
+    }
+
+    .butonMapsContainer button{     
+        width: 50px;
+        height: 50px;        
+    }
+}
+
+@media (max-width: 700px) {
+    .sitiosContainer{        
+        min-height: 100px;       
+    }       
+
+    .sitioContainer{
+        padding: 0.7rem;
+        margin: 0.3rem;
+        flex-basis: 100%;
+        min-height: 200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sitioContainer h4{
+        margin: 0.25rem 0;
+        flex-basis: 100%;
+    }
+
+    .iformacionSitio {
+        max-height: 150px;
+        font-size: 0.75em;
+        flex-basis: 60%;
+    }
+
+    #direccionTitulo{
+        margin: 0.4rem 0 0.1rem;
+        font-size: 0.75rem;
+        order: 3;
+    }
+
+    .imgContainer{
+        margin-left: auto;
+    }
+
+    .butonMapsContainer{          
+        bottom: -2%;
+        right: -2%;    
+    }   
+
+    #imgSitio{
+        width: 100px;
+        height: 100px;        
+    }
+
+    .butonMapsContainer button{     
+        width: 35px;
+        height: 35px;        
+    }
+
+    #imgMaps{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1750px) {
+
+    .sitioContainer{        
+        flex-basis: 20%;                        
+    }
+}
+

@@ -28,14 +28,15 @@ class SitioRecomendado extends Component {
         return(         
             <div  className="sitioContainer">                                               
                 <h4> {this.props.sitioData.nombre} </h4>               
-                <div>{formatHtmlText(this.props.sitioData.info.html)}</div>
-                <img id="imgSitio" src={this.props.sitioData.foto.url}/>
-                <div className="direccionContainer">
-                    <p> <b>Dirección:</b> {this.props.sitioData.direccionCalle}</p>                   
-                    <button onClick={this.openInNewTab}>    
-                        <p>Como llegar</p>                   
-                        <img src="https://image.flaticon.com/icons/svg/149/149442.svg" height="50px"/>
-                    </button>
+                <div className="iformacionSitio">{formatHtmlText(this.props.sitioData.info.html)}</div>
+                <p id="direccionTitulo">  <b>Dirección:</b> {this.props.sitioData.direccionCalle}</p>                   
+                <div className="imgContainer">
+                    <img id="imgSitio" src={this.props.sitioData.foto.url}/>
+                    <div className="butonMapsContainer">
+                        <button onClick={this.openInNewTab}>                                         
+                            <img id="imgMaps" src="https://image.flaticon.com/icons/svg/149/149442.svg" />
+                        </button>
+                    </div>
                 </div>       
             </div>
             ); 

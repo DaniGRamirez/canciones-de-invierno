@@ -30,12 +30,14 @@ class ConciertoItem extends Component {
                     <div className="descripcionArtista">{formatHtmlText(this.props.conciertoData.artista[0].descripcion.html)}</div>       
                     <img width="100px" height="100px" src={this.props.conciertoData.artista[0].foto.url}/>           
                 </div>                      */}
-                <div className="coompraEntradasContainer">                
-                    <div  className="fechaContent">    
-                        <p> {finalDate} </p>
-                    </div>    
-                    <div className="buttonBuy">
-                        <button> Comprar entradas</button>
+                <div className="compraParentContainer">
+                    <div className="compraEntradasContainer">                
+                        <div  className="fechaContent">    
+                            <p> {finalDate} </p>
+                        </div>    
+                        <div className="buttonBuy">
+                            <button> Comprar entradas</button>
+                        </div>
                     </div>
                 </div>
             </div>                     

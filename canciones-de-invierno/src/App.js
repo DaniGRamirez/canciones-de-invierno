@@ -14,6 +14,7 @@ import{
   Route,  
 } from "react-router-dom"
 
+var buttonTop;
 
 class App extends Component {
 
@@ -23,19 +24,43 @@ class App extends Component {
       isDesktop: false //This is where I am having problems
     };
 
+    
     this.updatePredicate = this.updatePredicate.bind(this);
+    this.ScrollToTop = this.ScrollToTop.bind(this);
   }
-    componentDidMount() {    
-      this.updatePredicate();
-      window.addEventListener("resize", this.updatePredicate);      
+  componentDidMount() {    
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);   
+    window.addEventListener('scroll', this.CheckScroll, true);   
+    buttonTop = document.getElementById("buttonGoTop");    
+    this.CheckScroll();
     }
 
     componentWillUnmount() {
       window.removeEventListener("resize", this.updatePredicate);
+      window.removeEventListener('scroll', this.CheckScroll);
     }
 
   updatePredicate() {    
     this.setState({ isDesktop: window.innerWidth > 600 });
+  }
+
+  ScrollToTop = () => {   
+    console.log("Scroll to top");
+    window.scroll({
+      top:  0, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+    // this.props.elementScroll.scrollIntoView({block: "start", behavior: "smooth"});
+  }      
+
+  CheckScroll = () => {             
+    if (window.pageYOffset > window.innerHeight/2) {
+      buttonTop.classList.remove("nonVisible");        
+    } else {
+      buttonTop.classList.add("nonVisible");        
+    }
   }
 
 render(){
@@ -62,6 +87,9 @@ render(){
               <Contacto/>
             </div> 
           </div>        
+        </div>
+        <div id="buttonGoTop" onClick={this.ScrollToTop}>
+          <img src="https://image.flaticon.com/icons/png/512/32/32195.png"/>
         </div>
         <Footer/>
       </div>

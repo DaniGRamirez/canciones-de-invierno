@@ -26,9 +26,12 @@
 }
 
 .FooterContainer a{
+    color: rgb(143, 0, 0);
     display: inline;
     font-family: monospace;
     font-size: small;   
     padding: 0;
     padding-left: 10px;
+    text-decoration: none;
+
 }

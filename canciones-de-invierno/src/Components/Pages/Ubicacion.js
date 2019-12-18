@@ -23,9 +23,14 @@ class Ubicacion extends Component {
             console.log(this.props.data);   
 
             return (                    
-                <div className="UbicacionContainer">                    
+                <div className="ubicacionContainer">   
                     <h1>Ubicacion</h1>      
-                    <div>{formatHtmlText(this.props.data.textoAsset.texto.html)}</div>
+                    <div className="imgUbicacionBG">
+                        <img src="https://media.graphcms.com/13HPVaRS5aG7t5wmMP4N"/>
+                        <div className="descBGOverlay">
+                            <div className="descContainer">{formatHtmlText(this.props.data.textoAsset.texto.html)}</div>
+                        </div>
+                    </div>                 
                     <Galeria key={this.props.data.galeriaFotos.id} galeriaData= {this.props.data.galeriaFotos}/>  
                     <h2>Sitios Recomendados</h2>      
                     <div className="sitiosContainer">

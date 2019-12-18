@@ -1,0 +1,15 @@
+.galeriaContent{
+    max-height: 500px;    
+    overflow: hidden;
+    background-color: black;    
+}
+
+.galeriaContent:focus {
+    outline:none;
+}
+
+.slick-slide div:focus{
+    outline: none;
+    border: none;
+}
+
