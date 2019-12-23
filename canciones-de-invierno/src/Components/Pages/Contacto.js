@@ -46,19 +46,19 @@ componentDidMount(){
             <div className="ContactContainer">       
                 <div className="formMailContainer">
                     <h1> Contacta con nosotros </h1>
-                    <div className="inputContainer">
+                    <div className="inputContainer" id="mailInput">
                         <label className="labelForm">Mail* </label>
                         <input type="email" id="correo" placeholder="nombre@ejemplo.com" required></input>
                     </div>
-                    <div className="inputContainer">
+                    <div className="inputContainer" id="nombreInput">
                         <label className="labelForm">Nombre* </label>
                         <input type="text" id="nombre" placeholder="nombre" required></input>
                     </div>
-                    <div className="inputContainer">
+                    <div className="inputContainer" id="asuntoInput">
                         <label className="labelForm" >Asunto? </label>
                         <input type="text" id="asunto" placeholder="asunto"></input>
                     </div>
-                    <div className="inputContainer">
+                    <div className="inputContainer" id="mensajeInput">
                         <label className="labelForm" >Mensaje* </label>
                         <textarea type="email" id="mensaje" rows="6"></textarea>
                     </div>

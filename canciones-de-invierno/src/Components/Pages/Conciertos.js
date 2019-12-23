@@ -18,7 +18,7 @@ class Conciertos extends Component {
         }
         
         if(!loading){      
-            console.log(this.props.data);                                      
+            // console.log(this.props.data);                                      
             return (    
                 <div className="ConciertosContainer">
                     {/* <h1>Proximos conciertos</h1> */}

@@ -7,8 +7,7 @@ import './Cartel.css';
 
 class Cartel extends Component {              
     
-    render(){              
-            console.log(this.props.data);                                      
+    render(){                                                              
             return (    
                 <div className="CartelContainer">
                   <img src='https://media.graphcms.com/fGEjip13Qemxoo1m8Qqh' id="imgCartel"/>

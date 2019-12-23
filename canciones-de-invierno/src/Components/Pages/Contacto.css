@@ -4,7 +4,7 @@
     margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
-    width: 99%;   
+    width: 95%;   
     color: #616161;
     font-weight: 400;
     letter-spacing: 1px;
@@ -127,7 +127,7 @@
 }
 
 #buttonEmail:hover{  
-    background-color:green;    
+    background-color:#e02275;    
     font-weight: bold;   
     cursor: pointer;
 }
@@ -141,7 +141,8 @@
 @media only screen and (max-width: 800px) {   
 
     .ContactContainer {        
-        width: 95%;       
+        width: 95%;      
+        padding: 0;                 
     }
 
     .ContactElement{             
@@ -162,7 +163,7 @@
 @media only screen and (max-width: 400px) {   
 
     .ContactContainer {
-        margin-top: 30px;
+        margin-top: 30px;                
     }
 
     .ContactElement{             
@@ -179,10 +180,24 @@
     .ContactElement h1{      
         margin-right: auto;       
         margin-left: 10px;
+        font-size: 0.6rem;
     }
 
     #buttonEmail{
         width: 70%;
     }
 }
+
+@media only screen and (min-width: 1250px) {   
+   
+    .ContactContainer {
+        margin-top: 30px;
+        width: 50%;         
+    }
+
+    #buttonEmail{
+        width: 25%;
+    }   
+}
+
 

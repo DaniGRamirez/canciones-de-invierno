@@ -19,8 +19,8 @@ class Ubicacion extends Component {
         }
         
         if(!loading){      
-            console.log("Render Ubicacion");
-            console.log(this.props.data);   
+            // console.log("Render Ubicacion");
+            // console.log(this.props.data);   
 
             return (                    
                 <div className="ubicacionContainer">   

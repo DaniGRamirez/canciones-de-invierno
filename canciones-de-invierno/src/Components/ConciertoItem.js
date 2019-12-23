@@ -13,7 +13,7 @@ class ConciertoItem extends Component {
         let date = new Date(this.props.conciertoData.fecha); 
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };   
         let finalDate = date.toLocaleDateString("es-ES", options)           
-        console.log(this.props);
+        // console.log(this.props);
         return(         
             <div  className="conciertoContent">                
                 <div  className="conciertoData">    

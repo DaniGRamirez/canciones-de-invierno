@@ -17,6 +17,11 @@ class HeaderLink extends Component {
           left: 0, 
           behavior: 'smooth'
         });
+        
+        if(this.props.closeMenu)   
+        {
+          this.props.closeMenu();
+        }                       
         // this.props.elementScroll.scrollIntoView({block: "start", behavior: "smooth"});
       }      
 
@@ -27,7 +32,7 @@ class HeaderLink extends Component {
     }      
 
       return(         
-        <div onClick={this.ScrollToElement} className="bg-light-gray">  
+        <div onClick={this.ScrollToElement} className="linkHeader">  
             <a>{this.props.text}</a>
         </div>                     
           ); 

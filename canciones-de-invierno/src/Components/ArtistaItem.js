@@ -7,13 +7,13 @@ class ArtistaItem extends Component {
 
   render(){ 
                    
-        console.log(this.props.artistaData);
+        // console.log(this.props.artistaData);
         return(         
             <div  className="artistaContainer">                
               <div className="artistaContent">
                 <img src={this.props.artistaData.foto.url} />   
                 <div className="bgOverlay">
-                    <div class="textOverlay">+ info</div>    
+                    <div className="textOverlay">+ info</div>    
                 </div>           
               </div>            
               <div className="nombreContainer">

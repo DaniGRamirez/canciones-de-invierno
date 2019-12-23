@@ -56,3 +56,9 @@
         padding: 3px 5px;        
     }
 }
+
+@media (max-width: 600px) {
+    .header{                                       
+        height: 75px;       
+    }
+}

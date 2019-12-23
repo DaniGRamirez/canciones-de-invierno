@@ -18,8 +18,8 @@ class GaleriaMainPage extends Component {
         }
         
         if(!loading){      
-            console.log("Render all galleries");
-            console.log(this.props.data);   
+            // console.log("Render all galleries");
+            // console.log(this.props.data);   
 
             return (    
                 

@@ -27,6 +27,7 @@
 
 .todosArtistasContainer{
     display: flex;    
+    justify-content: center;
 }
 
 .conciertoContent h1{

@@ -47,7 +47,7 @@ class Galeria extends Component {
       }
       else
       {        
-        console.log(this.props);
+        // console.log(this.props);
         return(         
             <div  className="galeriaContent">                                               
                     {/* <h2> {this.props.galeriaData.titulo} </h2>     */}

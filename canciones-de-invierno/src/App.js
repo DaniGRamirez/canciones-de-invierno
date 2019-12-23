@@ -11,7 +11,8 @@ import Footer from './Components/Pages/Footer'
 
 import{
   BrowserRouter as Router,
-  Route,  
+  Route, 
+  Switch, 
 } from "react-router-dom"
 
 var buttonTop;
@@ -69,31 +70,41 @@ render(){
       <Router>
       <div className="AppContainer">
         <div className="ContentContainer">
-          <Header isDesktop={this.state.isDesktop}/>     
-          <div className="ContentPage">  
-            <div id= "Inicio" className="section">
-              <Inicio/>               
-            </div>                         
-            <div id= "Conciertos" className="section">
-              <Conciertos/>               
-            </div>                         
-            <div id= "Galeria" className="section">
-              <GaleriaMainPage/>
-            </div> 
-            <div id= "Ubicacion" className="section">
-              <Ubicacion/>  
-            </div> 
-            <div id= "Contacto" className="section">
-              <Contacto/>
-            </div> 
-          </div>        
+            <Route path="/" exact>              
+              <Header isDesktop={this.state.isDesktop}/>  
+              <div className="ContentPage">  
+                <div id= "Inicio" className="section">
+                  <Inicio/>               
+                </div>                         
+                <div id= "Conciertos" className="section">
+                  <Conciertos/>               
+                </div>                         
+                <div id= "Galeria" className="section">
+                  <GaleriaMainPage/>
+                </div> 
+                <div id= "Ubicacion" className="section">
+                  <Ubicacion/>  
+                </div> 
+                <div id= "Contacto" className="section">
+                  <Contacto/>
+                </div> 
+              </div>                
+            </Route>     
+            <Route path="/artistas" exact>     
+              <div>
+                <h1>Esto es artista</h1>
+              </div>
+            </Route>
+            <Route path="/artistas/:id" >   
+              <h1>Test</h1>
+            </Route>
         </div>
         <div id="buttonGoTop" onClick={this.ScrollToTop}>
           <img src="https://image.flaticon.com/icons/png/512/32/32195.png"/>
         </div>
         <Footer/>
-      </div>
-    </Router>     
+      </div>   
+      </Router>
     );
 }
 }

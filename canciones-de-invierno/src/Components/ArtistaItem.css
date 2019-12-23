@@ -1,5 +1,5 @@
 .artistaContainer{
-    flex-basis: 33.3%;
+    flex-basis: 40%;
     position: relative;
     cursor: pointer;
 }
@@ -27,8 +27,7 @@
 }
 
 .artistaContainer h2{
-    margin: 0;
-    margin-bottom: 5%;
+    margin: 0;   
     color: white;
 }
 
@@ -69,7 +68,11 @@
 
   @media (max-width: 1000px) {
     .artistaContainer{
-      flex-basis: 40%;
+      flex-basis: 50%;
+    }
+
+    .artistaContainer h2 {       
+        font-size: 0.95rem;
     }
 }
 
@@ -80,4 +83,23 @@
         padding-right: 1rem;
     }
     
+    .artistaContainer h2 {       
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .nombreContainer{      
+        font-size: 0.5rem;       
+        padding: 0;        
+        width: 100%;
+        bottom: 0;
+    }
+    
+    .artistaContainer h2 {       
+        font-size: 0.75rem;
+        margin: 0;
+        padding: 0.25rem;
+    }
+
 }
