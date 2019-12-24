@@ -57,7 +57,7 @@ class BurguerMenu extends Component {
                 );
             }
           
-
+          document.querySelector(".navsBurger").style.display = "Flex";   
           document.body.style.overflow = 'hidden';
         }
         else
@@ -88,11 +88,12 @@ class BurguerMenu extends Component {
             onStateChange={(state) => this.handleStateChange(state)}
             crossButtonClassName={ "testCross" }>           
             <div className="navsBurger">           
-              <HeaderLink elementScroll = {document.getElementById("Inicio")} closeMenu={this.closeMenu} text="Inicio"/>                  
-              <HeaderLink  elementScroll={document.getElementById("Conciertos")} closeMenu={this.closeMenu}text="Conciertos" />  
-              <HeaderLink  elementScroll={document.getElementById("Galeria")} closeMenu={this.closeMenu} text="Galeria" />                                            
-              <HeaderLink  elementScroll={document.getElementById("Ubicacion")} closeMenu={this.closeMenu} text="Ubicacion" />  
-              <HeaderLink  elementScroll={document.getElementById("Contacto")} closeMenu={this.closeMenu}  text="Contacto" />
+              <HeaderLink linkTo="/" elementIdScroll = {"Inicio"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Inicio"/>                  
+              <HeaderLink linkTo="/" elementIdScroll={"Conciertos"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Conciertos" />  
+              <HeaderLink linkTo="/Artistas" elementIdScroll={"Artistas"} closeMenu={this.closeMenu} text="Artistas" />
+              <HeaderLink linkTo="/" elementIdScroll={"Galeria"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Galeria" />                                            
+              <HeaderLink linkTo="/" elementIdScroll={"Ubicacion"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Ubicacion" />  
+              <HeaderLink linkTo="/" elementIdScroll={"Contacto"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Contacto" />
             </div>
               <a target="blank" onClick={() => this.closeMenu()} className="menu-item--small" href="https://www.instagram.com/tomasgr.escultura/">
               <img id="logoInsta" alt="logo" src = {logoInstagram}></img>

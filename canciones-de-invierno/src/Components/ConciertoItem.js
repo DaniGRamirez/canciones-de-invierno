@@ -22,7 +22,7 @@ class ConciertoItem extends Component {
                 </div> 
                 <div className="todosArtistasContainer">
                 {this.props.conciertoData.artista.map (artista => (
-                       <ArtistaItem key={artista.id} artistaData= {artista}></ArtistaItem>                        
+                       <ArtistaItem key={artista.id} artistaData= {artista} history={this.props.history}></ArtistaItem>                        
                     ))
                     }
                 </div>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import './HeaderLink.css';
+import {Link} from 'react-router-dom';
 
 class HeaderLink extends Component {
 
@@ -11,9 +12,29 @@ class HeaderLink extends Component {
 
 
       ScrollToElement = () => {
+
+        console.log(document.getElementById(this.props.elementIdScroll))
+        let scrollElement = document.getElementById(this.props.elementIdScroll);
+
+        if(scrollElement === null)
+        {
+          console.log(this.props);
+          if(this.props.setElementIDHeader)   
+          {
+            this.props.setElementIDHeader(this.props.elementIdScroll);
+          }  
+
+          if(this.props.closeMenu)   
+          {
+            this.props.closeMenu();
+          }    
+
+          return;
+        }
+
         console.log(document.getElementById("myHeader").offsetHeight);
         window.scroll({
-          top:  this.props.elementScroll.offsetTop - document.getElementById("myHeader").offsetHeight, 
+          top:  scrollElement.offsetTop - document.getElementById("myHeader").offsetHeight, 
           left: 0, 
           behavior: 'smooth'
         });
@@ -21,20 +42,26 @@ class HeaderLink extends Component {
         if(this.props.closeMenu)   
         {
           this.props.closeMenu();
-        }                       
+        }         
+        
+        if(this.props.setElementIDHeader)   
+        {
+          this.props.setElementIDHeader(this.props.elementIdScroll);
+        }  
         // this.props.elementScroll.scrollIntoView({block: "start", behavior: "smooth"});
       }      
 
   render(){   
+    console.log("ReRender Header");
     if(this.props.isDesktop === false)     
     {
        
     }      
 
       return(         
-        <div onClick={this.ScrollToElement} className="linkHeader">  
-            <a>{this.props.text}</a>
-        </div>                     
+        <Link to={this.props.linkTo} onClick={this.ScrollToElement} className="linkHeader">  
+            <span>{this.props.text}</span>
+        </Link>                     
           ); 
   }   
 }

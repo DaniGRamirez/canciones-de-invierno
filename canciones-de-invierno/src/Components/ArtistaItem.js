@@ -5,11 +5,21 @@ import {formatHtmlText} from '../FormatHtmlParser'
 
 class ArtistaItem extends Component {
 
+  constructor (props) {
+    super(props)  
+    this.navToArtista = this.navToArtista.bind(this);   
+  }
+
+  navToArtista(){
+    console.log(`nav to artista ${this.props.artistaData.nombre}`);
+    this.props.history.push(`/Artistas/${this.props.artistaData.id}`)
+  }
+
   render(){ 
                    
         // console.log(this.props.artistaData);
         return(         
-            <div  className="artistaContainer">                
+            <div  className="artistaContainer" onClick={this.navToArtista}>                
               <div className="artistaContent">
                 <img src={this.props.artistaData.foto.url} />   
                 <div className="bgOverlay">

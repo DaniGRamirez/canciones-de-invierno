@@ -93,7 +93,12 @@
     transition: color 0.5s ease;   
 }
 
-.navsBurger a{
+.navsBurger{
+  display: flex;
+  flex-direction: column;
+}
+
+.navsBurger span{
 
   cursor: pointer;   
   color:#e6e6e6;
@@ -106,7 +111,7 @@
   text-transform: uppercase;
 }
 
-.navsBurger a:hover{
+.navsBurger span:hover{
   color: white;
   border-bottom: 2px solid currentColor;           
   transition: color 0.5s ease;
@@ -122,7 +127,7 @@
 }
 
 @media (max-width: 450px) {
-  .navsBurger a{   
+  .navsBurger span{   
     letter-spacing: 0.5rem;          
     margin-bottom: 1rem;
     font-size: 1.5rem;    

@@ -18,12 +18,13 @@ class Conciertos extends Component {
         }
         
         if(!loading){      
+            console.log(this.props);
             // console.log(this.props.data);                                      
             return (    
                 <div className="ConciertosContainer">
                     {/* <h1>Proximos conciertos</h1> */}
                    {this.props.data.conciertoes.map (concierto => (
-                       <ConciertoItem key={concierto.id} conciertoData= {concierto}></ConciertoItem>                        
+                       <ConciertoItem key={concierto.id} conciertoData= {concierto} history={this.props.history} ></ConciertoItem>                        
                     ))
                     }
                 </div>)
@@ -48,6 +49,7 @@ export const conciertosInfo = gql`
         fecha
         artista
         {
+            id
             nombre
             foto
             {

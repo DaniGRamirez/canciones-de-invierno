@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-
 import{ 
     Link
   } from "react-router-dom"
@@ -17,20 +16,62 @@ let burguerMenu;
 let headerNavs;
 
 class Header extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {elementToDoScroll: ""};
+    this.setElementScroll = this.setElementScroll.bind(this)
+  }
+
     showSettings (event) {
         event.preventDefault();       
       }    
 
     componentDidMount(){
+
       header = document.getElementById("myHeader");         
-      sticky = header.offsetTop;            
+      sticky = header.offsetTop;      
       window.addEventListener('scroll', this.CheckScroll, true);
+      console.log("component did mount header");      
     }    
   
+    scrollToElement(){
+                   
+        console.log(this.state);
+        console.log("doing scroll");
+        
+        let scrollElement = document.getElementById(this.state.elementToDoScroll);
+        console.log(scrollElement);
+          if(scrollElement === null)
+            return;
+
+          console.log(document.getElementById("myHeader").offsetHeight);
+          window.scroll({
+            top:  scrollElement.offsetTop - document.getElementById("myHeader").offsetHeight, 
+            left: 0, 
+            behavior: 'smooth'
+          });
+
+          this.setState({elementToDoScroll: ""});      
+    }
+
     componentWillUnmount() {
       window.removeEventListener('scroll', this.CheckScroll);
     }
 
+    componentDidUpdate(){
+      console.log("Component did update");
+      if(this.state.elementToDoScroll !== "")
+      {
+        console.log("Has to do scroll");
+        this.scrollToElement();
+      }
+    }
+
+    setElementScroll(elementID){
+      console.log("Set state in header");
+      this.setState({elementToDoScroll: elementID});
+    }
 
      CheckScroll = () => {       
       if (window.pageYOffset > sticky) {
@@ -41,11 +82,14 @@ class Header extends Component {
     }
 
   render(){   
+    
+    console.log(this.state.elementToDoScroll);
+       
     if(this.props.isDesktop === false)     
     {
       burguerMenu =        
          <div>
-           <BurguerMenu/>
+           <BurguerMenu setElementIDHeader = {this.setElementScroll}/>
          </div>;   
       headerNavs = "";
     }      
@@ -54,11 +98,12 @@ class Header extends Component {
 
       headerNavs =                                                
       <div className="navs">                               
-          <HeaderLink elementScroll = {document.getElementById("Inicio")}  text="Inicio"/>                  
-          <HeaderLink  elementScroll={document.getElementById("Conciertos")}  text="Conciertos" />  
-          <HeaderLink  elementScroll={document.getElementById("Galeria")}  text="Galeria" />                                            
-          <HeaderLink  elementScroll={document.getElementById("Ubicacion")}  text="Ubicacion" />  
-          <HeaderLink  elementScroll={document.getElementById("Contacto")}  text="Contacto" />  
+          <HeaderLink linkTo="/" elementIdScroll = {"Inicio"} setElementIDHeader = {this.setElementScroll}  text="Inicio"/>                  
+          <HeaderLink linkTo="/" elementIdScroll={"Conciertos"} setElementIDHeader = {this.setElementScroll} text="Conciertos" />  
+          <HeaderLink linkTo="/Artistas" text="Artistas" />  
+          <HeaderLink linkTo="/"  elementIdScroll={"Galeria"} setElementIDHeader = {this.setElementScroll}  text="Galeria" />                                            
+          <HeaderLink linkTo="/"  elementIdScroll={"Ubicacion"} setElementIDHeader = {this.setElementScroll} text="Ubicacion" />  
+          <HeaderLink linkTo="/"  elementIdScroll={"Contacto"} setElementIDHeader = {this.setElementScroll} text="Contacto" />  
       </div>;
       burguerMenu = "";
     }

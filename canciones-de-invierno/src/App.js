@@ -4,10 +4,15 @@ import './App.css';
 import Header from './Components/Header'
 import Inicio from './Components/Pages/Inicio'
 import Conciertos from './Components/Pages/Conciertos'
+import Artistas, { artistasInfo } from './Components/Pages/Artistas'
+import ArtistaInfo from "./Components/Pages/ArtistaInfo"
 import GaleriaMainPage from './Components/Pages/GaleriaMainPage'
 import Ubicacion from './Components/Pages/Ubicacion'
 import Contacto from './Components/Pages/Contacto'
 import Footer from './Components/Pages/Footer'
+
+
+import MainPage from './Components/Pages/MainPage'
 
 import{
   BrowserRouter as Router,
@@ -70,34 +75,10 @@ render(){
       <Router>
       <div className="AppContainer">
         <div className="ContentContainer">
-            <Route path="/" exact>              
-              <Header isDesktop={this.state.isDesktop}/>  
-              <div className="ContentPage">  
-                <div id= "Inicio" className="section">
-                  <Inicio/>               
-                </div>                         
-                <div id= "Conciertos" className="section">
-                  <Conciertos/>               
-                </div>                         
-                <div id= "Galeria" className="section">
-                  <GaleriaMainPage/>
-                </div> 
-                <div id= "Ubicacion" className="section">
-                  <Ubicacion/>  
-                </div> 
-                <div id= "Contacto" className="section">
-                  <Contacto/>
-                </div> 
-              </div>                
-            </Route>     
-            <Route path="/artistas" exact>     
-              <div>
-                <h1>Esto es artista</h1>
-              </div>
-            </Route>
-            <Route path="/artistas/:id" >   
-              <h1>Test</h1>
-            </Route>
+            <Header isDesktop={this.state.isDesktop}/>  
+            <Route path="/" exact component={MainPage}/>                            
+            <Route path="/artistas" exact component={Artistas}/>                               
+            <Route path="/artistas/:id" component={ArtistaInfo} />  
         </div>
         <div id="buttonGoTop" onClick={this.ScrollToTop}>
           <img src="https://image.flaticon.com/icons/png/512/32/32195.png"/>
