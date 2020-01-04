@@ -35,9 +35,9 @@ class ConciertoItem extends Component {
                         <div  className="fechaContent">    
                             <p> {finalDate} </p>
                         </div>    
-                        <div className="buttonBuy">
+                        {/* <div className="buttonBuy">
                             <button> Comprar entradas</button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>                     

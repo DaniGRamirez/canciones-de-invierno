@@ -5,12 +5,13 @@
     padding: 0;   
     display: flex;  
     align-items: baseline;
-    align-content: center;     
-    background-color:#e02275;
+    align-content: center;       
     height: 150px;
     transition: all 0.5s ease;    
     width: 100%;
     z-index: 10;
+    position: absolute;
+    top: 0;
 }
 
 .sticky {
@@ -18,24 +19,51 @@
     top: 0;    
     width: 100%;
     height: 100px;
+    background-color: white;
+    border-bottom: solid 3px black;
   }
 
+  .sticky .navs{
+    margin:auto;    
+   
+  }
+
+.forcedArtista{
+    background-color: white; 
+    position: relative;   
+}
+
+.forcedArtista .navs{
+    margin:auto;    
+    padding: 10px;
+    display: flex;          
+}
+
+.forcedArtista .navs a{
+  color: black;        
+}
+
+.forcedArtista.sticky {
+    position: fixed;    
+}
+ 
 .navs{
     margin:auto;    
     padding: 10px;
     display: flex;
+    margin-left: 3rem;
     /* padding-bottom: 10px; */
 }
  
 .navs a{
 
     cursor: pointer;   
-    color:#e6e6e6;
+    color:white;
     font-weight: 400;
     letter-spacing: 1px;       
     text-decoration: none;    
     margin-bottom: 0;
-    font-size: 1em;
+    font-size: 1.2em;
     padding: 5px 10px;
     transition: color 0.5s ease;
     text-transform: uppercase;
@@ -47,7 +75,45 @@
     transition: color 0.5s ease;
 }
 
-@media (max-width: 700px) {
+.sticky .navs a{
+    color:black;
+}
+
+@media (min-width: 1000px) {
+
+    .navs{
+        margin-left: auto;
+    }  
+
+}
+
+@media (max-width: 1250px) {
+    .navs{
+        margin-left: 1rem;
+    }
+
+    .navs a{
+     
+        font-weight: 400;
+        letter-spacing: 1px;       
+        font-size: 1rem;
+        padding: 3px 5px;        
+    }
+}
+
+@media (max-width: 800px) {
+    .header{
+        background-color: #ffffff00;
+    }
+
+    .sticky{
+        background-color: white;
+    }
+
+    .navs{
+        margin-left: auto;
+    }
+
     .navs a{
      
         font-weight: 400;

@@ -4,4 +4,12 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 5rem;
-}
+}  
+
+@media (max-width: 500px) {          
+
+    .ArtistasContainer{      
+        margin-top: 1rem;
+    }   
+   
+  }

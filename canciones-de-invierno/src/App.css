@@ -1,7 +1,7 @@
 .AppContainer {
   text-align: center;
   /* background-image: linear-gradient(#e02275 0%, #764ba2 100%); */
-  background-color: white;
+  background-color: white; 
 }
 
 .App-logo {
@@ -22,6 +22,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+.ContentContainer{
+  min-height: 100vh;
+}
+
 .section{ 
   margin: auto;
   text-align: center;
@@ -36,54 +41,4 @@
 
 body {
   font-family: Futura!important;
-}
-
-.nonVisible{
-  display: none !important;
-}
-
-#buttonGoTop{
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  cursor: pointer;
-  background-color: #e02275;  
-  border-radius: 100%;
-  border: white;
-  border-width: 2px;
-  border-style: solid;
-  text-align: center;
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#buttonGoTop:hover{
-  background-color: black;
-  -webkit-filter: none;
-  filter: none;
-
-  transition: all 0.5s ease;
-  transform: scale(1.1); 
-}
-
-#buttonGoTop img{ 
-  align-self: center;  
-  width: 50%;
-  -webkit-filter: invert(1);
-  filter: invert(1);
-  transform: rotate(180deg);
-}
-
-@media (max-width: 700px) {  
-
-
-  #buttonGoTop{ 
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 2rem;
-    height: 2rem; 
-  }
 }

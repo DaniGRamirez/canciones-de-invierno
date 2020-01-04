@@ -32,7 +32,7 @@ class Galeria extends Component {
   render(){                        
          
     const settings = {
-      dots: true,
+      dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 3,

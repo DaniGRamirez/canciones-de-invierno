@@ -1,6 +1,7 @@
 
 .compraEntradasContainer{
-    background-color: #e02275;
+    background-color: #0d6cb4;
+    color: white;
     width: 30%;
     margin-left: auto;
     margin-right: 2rem;
@@ -11,6 +12,10 @@
     width: 80%;   
     margin: 20px auto;  
     padding-top: 10px;
+}
+
+.fechaContent p{
+    padding-bottom: 1rem;
 }
 
 .buttonBuy{

@@ -12,6 +12,10 @@ class ArtistaItem extends Component {
 
   navToArtista(){
     console.log(`nav to artista ${this.props.artistaData.nombre}`);
+    window.scroll({
+      top:  0, 
+      left: 0,       
+    });
     this.props.history.push(`/Artistas/${this.props.artistaData.id}`)
   }
 

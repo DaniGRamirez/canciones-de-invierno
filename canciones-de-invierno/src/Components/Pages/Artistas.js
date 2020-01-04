@@ -6,8 +6,18 @@ import './Artistas.css';
 import ArtistaItem from '../ArtistaItem'
 
 
+let header;
 class Artistas extends Component {              
     
+    componentDidMount() {    
+        header = document.getElementById("myHeader");    
+        header.classList.add("forcedArtista");              
+    }
+
+    componentWillUnmount() {
+        header.classList.remove("forcedArtista");        
+      }
+
     render(){                                                              
        
         let { loading, error, } = this.props.data;

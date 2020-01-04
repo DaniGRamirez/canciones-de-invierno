@@ -11,6 +11,7 @@ import BurguerMenu from './BurguerMenu';
 
 var header;
 var sticky;
+let minHeightToSticky = 1750;
 
 let burguerMenu;
 let headerNavs;
@@ -30,9 +31,12 @@ class Header extends Component {
     componentDidMount(){
 
       header = document.getElementById("myHeader");         
-      sticky = header.offsetTop;      
+      // sticky = header.offsetTop;     
+      sticky = 50;     
+      console.log(sticky); 
       window.addEventListener('scroll', this.CheckScroll, true);
       console.log("component did mount header");      
+      console.log(this.props.history);
     }    
   
     scrollToElement(){
@@ -73,12 +77,12 @@ class Header extends Component {
       this.setState({elementToDoScroll: elementID});
     }
 
-     CheckScroll = () => {       
+     CheckScroll = () => {         
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");        
       } else {
         header.classList.remove("sticky");        
-      }
+      }      
     }
 
   render(){   

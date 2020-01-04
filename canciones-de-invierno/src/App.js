@@ -31,57 +31,32 @@ class App extends Component {
     };
 
     
-    this.updatePredicate = this.updatePredicate.bind(this);
-    this.ScrollToTop = this.ScrollToTop.bind(this);
+    this.updatePredicate = this.updatePredicate.bind(this);    
   }
   componentDidMount() {    
     this.updatePredicate();
-    window.addEventListener("resize", this.updatePredicate);   
-    window.addEventListener('scroll', this.CheckScroll, true);   
-    buttonTop = document.getElementById("buttonGoTop");    
-    this.CheckScroll();
+    window.addEventListener("resize", this.updatePredicate);           
     }
 
     componentWillUnmount() {
-      window.removeEventListener("resize", this.updatePredicate);
-      window.removeEventListener('scroll', this.CheckScroll);
+      window.removeEventListener("resize", this.updatePredicate);      
     }
 
-  updatePredicate() {    
-    this.setState({ isDesktop: window.innerWidth > 600 });
-  }
-
-  ScrollToTop = () => {   
-    console.log("Scroll to top");
-    window.scroll({
-      top:  0, 
-      left: 0, 
-      behavior: 'smooth'
-    });
-    // this.props.elementScroll.scrollIntoView({block: "start", behavior: "smooth"});
-  }      
-
-  CheckScroll = () => {             
-    if (window.pageYOffset > window.innerHeight/2) {
-      buttonTop.classList.remove("nonVisible");        
-    } else {
-      buttonTop.classList.add("nonVisible");        
-    }
-  }
-
+  updatePredicate() {      
+    this.setState({ isDesktop: window.innerWidth > 800 });
+  }   
 render(){
 
     return (
       <Router>
       <div className="AppContainer">
         <div className="ContentContainer">
-            <Header isDesktop={this.state.isDesktop}/>  
-            <Route path="/" exact component={MainPage}/>                            
+            <Route>                                   
+              <Header isDesktop={this.state.isDesktop}/>  
+            </Route>
+            <Route path="/" exact component={MainPage}/>                                   
             <Route path="/artistas" exact component={Artistas}/>                               
             <Route path="/artistas/:id" component={ArtistaInfo} />  
-        </div>
-        <div id="buttonGoTop" onClick={this.ScrollToTop}>
-          <img src="https://image.flaticon.com/icons/png/512/32/32195.png"/>
         </div>
         <Footer/>
       </div>   

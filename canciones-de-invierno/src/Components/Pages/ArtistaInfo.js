@@ -3,6 +3,8 @@ import { useRouteMatch } from "react-router";
 import gql from 'graphql-tag'
 import { graphql,Query } from 'react-apollo'
 import Artistas from './Artistas';
+import {formatHtmlText} from '../../FormatHtmlParser'
+import './ArtistaInfo.css';
 
 export const artistaInfo = gql`
 query artista ($id: ID){
@@ -16,8 +18,18 @@ query artista ($id: ID){
 }
 `
 
-class ArtistaInfo extends Component {
+let header;
 
+class ArtistaInfo extends Component {
+   
+    componentDidMount() {    
+        header = document.getElementById("myHeader");    
+        header.classList.add("forcedArtista");              
+    }
+
+    componentWillUnmount() {
+        header.classList.remove("forcedArtista");        
+      }
 
 render(){
       
@@ -43,13 +55,21 @@ render(){
                 }
 
                 return (            
-                    <div className="artistaInfoContent">  
-                        <button onClick={()=> this.props.history.goBack()} >Volver</button>
-                        <p>Aqui va descripcion del artista</p>
-                        <p>{data.artista.nombre}</p>               
+                    <div className="artistaInfoContainer">  
+                        <button id="buttonGoBack" onClick={()=> this.props.history.goBack()} >
+                            <img src="https://image.flaticon.com/icons/png/512/32/32195.png"/>
+                        </button>
+                        <div className="artistaContent">
+                            <div className="fotoNombreArtista">   
+                                <div className="nombreContainer">
+                                    <h2>{data.artista.nombre}</h2>
+                                </div>
+                                <img src={data.artista.foto.url}/>
+                            </div>
+                            <div className="descArtistaContainer">{formatHtmlText(data.artista.descripcion.html)}</div>                                                     
+                        </div>
                     </div>                           
                 );
-
             }}
         </Query>
     ) 
