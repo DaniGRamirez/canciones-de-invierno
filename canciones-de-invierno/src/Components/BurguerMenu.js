@@ -91,7 +91,7 @@ class BurguerMenu extends Component {
               <HeaderLink linkTo="/" elementIdScroll = {"Inicio"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Inicio"/>                  
               <HeaderLink linkTo="/" elementIdScroll={"Conciertos"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Conciertos" />  
               <HeaderLink linkTo="/Artistas" elementIdScroll={"Artistas"} closeMenu={this.closeMenu} text="Artistas" />
-              <HeaderLink linkTo="/" elementIdScroll={"Galeria"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Galeria" />                                            
+              {/* <HeaderLink linkTo="/" elementIdScroll={"Galeria"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Galeria" />                                             */}
               <HeaderLink linkTo="/" elementIdScroll={"Ubicacion"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Ubicacion" />  
               <HeaderLink linkTo="/" elementIdScroll={"Contacto"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Contacto" />
             </div>

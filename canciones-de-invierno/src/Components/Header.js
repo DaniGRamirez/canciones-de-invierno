@@ -92,7 +92,10 @@ class Header extends Component {
     if(this.props.isDesktop === false)     
     {
       burguerMenu =        
-         <div>
+         <div className="headerBurguerContainer">
+           <div className="headerImgContainer">
+              <img id="imgHeaderLogo" src="https://media.graphcms.com/Kb7cWIlVSwiDvHvxqq9G"/>
+           </div>
            <BurguerMenu setElementIDHeader = {this.setElementScroll}/>
          </div>;   
       headerNavs = "";
@@ -105,7 +108,7 @@ class Header extends Component {
           <HeaderLink linkTo="/" elementIdScroll = {"Inicio"} setElementIDHeader = {this.setElementScroll}  text="Inicio"/>                  
           <HeaderLink linkTo="/" elementIdScroll={"Conciertos"} setElementIDHeader = {this.setElementScroll} text="Conciertos" />  
           <HeaderLink linkTo="/Artistas" text="Artistas" />  
-          <HeaderLink linkTo="/"  elementIdScroll={"Galeria"} setElementIDHeader = {this.setElementScroll}  text="Galeria" />                                            
+          {/* <HeaderLink linkTo="/"  elementIdScroll={"Galeria"} setElementIDHeader = {this.setElementScroll}  text="Galeria" />                                             */}
           <HeaderLink linkTo="/"  elementIdScroll={"Ubicacion"} setElementIDHeader = {this.setElementScroll} text="Ubicacion" />  
           <HeaderLink linkTo="/"  elementIdScroll={"Contacto"} setElementIDHeader = {this.setElementScroll} text="Contacto" />  
       </div>;

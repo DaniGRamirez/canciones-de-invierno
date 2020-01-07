@@ -118,8 +118,7 @@
         flex-basis: 100%;
     }
 
-    .iformacionSitio {
-        max-height: 150px;
+    .iformacionSitio {      
         font-size: 0.75em;
         flex-basis: 60%;
     }

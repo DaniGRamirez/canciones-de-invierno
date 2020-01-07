@@ -59,9 +59,9 @@ class MainPage extends Component {
             <div id= "Conciertos" className="section" >
                 <Conciertos history={this.props.history}/>               
             </div>                         
-            <div id= "Galeria" className="section">
+            {/* <div id= "Galeria" className="section">
                 <GaleriaMainPage/>
-            </div> 
+            </div>  */}
             <div id= "Ubicacion" className="section">
                 <Ubicacion/>  
             </div> 
