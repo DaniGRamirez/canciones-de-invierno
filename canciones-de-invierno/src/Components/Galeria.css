@@ -1,5 +1,4 @@
-.galeriaContent{
-    max-height: 500px;    
+.galeriaContent{     
     overflow: hidden;
     background-color: black;    
 }

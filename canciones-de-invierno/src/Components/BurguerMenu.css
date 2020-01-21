@@ -121,7 +121,16 @@
   padding: 1.5rem 2.5rem;
 }
 
+.socialMediaIconsBurger{
+  display: flex;
+}
+
 #logoInsta{
+  width: 50px;
+  filter: invert(100%);
+}
+
+#logoFacebook{
   width: 50px;
   filter: invert(100%);
 }

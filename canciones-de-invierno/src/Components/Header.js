@@ -15,6 +15,7 @@ let minHeightToSticky = 1750;
 
 let burguerMenu;
 let headerNavs;
+let socialNavs;
 
 class Header extends Component {
 
@@ -99,26 +100,38 @@ class Header extends Component {
            <BurguerMenu setElementIDHeader = {this.setElementScroll}/>
          </div>;   
       headerNavs = "";
+      socialNavs = "";
     }      
     else
     {
 
-      headerNavs =                                                
-      <div className="navs">                               
-          <HeaderLink linkTo="/" elementIdScroll = {"Inicio"} setElementIDHeader = {this.setElementScroll}  text="Inicio"/>                  
-          <HeaderLink linkTo="/" elementIdScroll={"Conciertos"} setElementIDHeader = {this.setElementScroll} text="Conciertos" />  
-          <HeaderLink linkTo="/Artistas" text="Artistas" />  
-          {/* <HeaderLink linkTo="/"  elementIdScroll={"Galeria"} setElementIDHeader = {this.setElementScroll}  text="Galeria" />                                             */}
-          <HeaderLink linkTo="/"  elementIdScroll={"Ubicacion"} setElementIDHeader = {this.setElementScroll} text="Ubicacion" />  
-          <HeaderLink linkTo="/"  elementIdScroll={"Contacto"} setElementIDHeader = {this.setElementScroll} text="Contacto" />  
-      </div>;
+      headerNavs =                                                   
+        <div className="navs">                               
+            <HeaderLink linkTo="/" elementIdScroll = {"Inicio"} setElementIDHeader = {this.setElementScroll}  text="Inicio"/>                  
+            <HeaderLink linkTo="/" elementIdScroll={"Conciertos"} setElementIDHeader = {this.setElementScroll} text="Conciertos" />  
+            <HeaderLink linkTo="/Artistas" text="Artistas" />  
+            {/* <HeaderLink linkTo="/"  elementIdScroll={"Galeria"} setElementIDHeader = {this.setElementScroll}  text="Galeria" />                                             */}
+            <HeaderLink linkTo="/"  elementIdScroll={"Ubicacion"} setElementIDHeader = {this.setElementScroll} text="Ubicacion" />  
+            <HeaderLink linkTo="/"  elementIdScroll={"Contacto"} setElementIDHeader = {this.setElementScroll} text="Contacto" />           
+        </div>;
+
       burguerMenu = "";
+      socialNavs =  
+      <div className="socialMediaIconsContainer">
+        <a className="socialMediaLogo" href="https://www.instagram.com/cancionesdeinvierno/?hl=es" target="blank">
+          <img src="https://image.flaticon.com/icons/png/512/1384/1384015.png"/>
+        </a>
+        <a className="socialMediaLogo" href="https://www.facebook.com/cancionesdeinvierno" target="blank">
+          <img src="https://image.flaticon.com/icons/png/512/1384/1384005.png"/>
+        </a>
+      </div>;
     }
 
       return(         
         <div className= "header" id="myHeader">  
           {burguerMenu}
           {headerNavs}
+          {socialNavs}
         </div>
           ); 
   }   

@@ -26,7 +26,7 @@ class Ubicacion extends Component {
                 <div className="ubicacionContainer">   
                     <h1>Ubicacion</h1>      
                     <div className="imgUbicacionBG">
-                        <img src="https://media.graphcms.com/13HPVaRS5aG7t5wmMP4N"/>
+                        <img src="https://media.graphcms.com/tV47KSVRqOGpceBuLfSw"/>
                         <div className="descBGOverlay">
                             <div className="descContainer">{formatHtmlText(this.props.data.textoAsset.texto.html)}</div>
                         </div>
@@ -76,12 +76,15 @@ export const ubicacionInfo = gql`
       size
       mimeType
       url
+      prioridadOrden
+      fileName
     }
     titulo   
   }
 
   sitioRecomendadoes{
       nombre
+      status
       info{
         html
       }

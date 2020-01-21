@@ -26,8 +26,9 @@
     margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;    
-    outline: none;       
+    width: 50%;
+    outline: none;
+    justify-content: center;      
 }
 
 .ContactElement h1{
@@ -143,11 +144,7 @@
     .ContactContainer {        
         width: 95%;      
         padding: 0;                 
-    }
-
-    .ContactElement{             
-        width: 80%;
-    }
+    }   
 
     .ContactElement h1{
         font-size: 75%;            

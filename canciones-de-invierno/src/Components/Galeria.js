@@ -1,7 +1,19 @@
 import React, {Component} from 'react';
 import Slider from "react-slick";
 import './Galeria.css';
+import './Slick.css';
 import {formatHtmlText} from '../FormatHtmlParser'
+
+// function SampleNextArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "red" ,position:"absolute",right:"50px"}}
+//       onClick={onClick}
+//     />
+//   );
+// }
 
 class Galeria extends Component {
 
@@ -32,18 +44,35 @@ class Galeria extends Component {
   render(){                        
          
     const settings = {
-      dots: false,
+      dots: true,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,           
-      arrows:false,     
+      arrows: true,    
+      // nextArrow: <SampleNextArrow /> 
     };
+
+    console.log(this.props.galeriaData);
+
+    let ordererdGaleria = this.props.galeriaData.itemGaleria
+    .sort(function(a, b){      
+      if (a.prioridadOrden > b.prioridadOrden) {        
+        return 1;
+      }
+      if (a.prioridadOrden < b.prioridadOrden) {        
+        return -1;
+      }      
+      return 0;
+    })
+
+    console.log(ordererdGaleria);
 
       if(this.props.galeriaData === null)
       {
         console.log("galeria data is null -> render void div");
         return (<div/>);
+
       }
       else
       {        
@@ -52,7 +81,7 @@ class Galeria extends Component {
             <div  className="galeriaContent">                                               
                     {/* <h2> {this.props.galeriaData.titulo} </h2>     */}
                     <Slider {...settings}>                      
-                      {this.props.galeriaData.itemGaleria.map (assetGallery => (                     
+                      {ordererdGaleria.map (assetGallery => (                     
                             this.renderGalleryItem(assetGallery)                  
                       ))
                       }           
@@ -60,8 +89,9 @@ class Galeria extends Component {
             </div>
             ); 
       }
-
   }   
 }
+
+
 
 export default Galeria;

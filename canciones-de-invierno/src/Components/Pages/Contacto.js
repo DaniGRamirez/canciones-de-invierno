@@ -23,7 +23,7 @@ componentDidMount(){
                       asunto: asunto,
                       mensaje: mensaje,    
                   }                                    
-                  axios.post('/api/contacto',datos).
+                  axios.post('api/contacto',datos).
                     then(function(response){                    
                             alert("Email mandado");                        
                     }).catch(function(error){
@@ -69,12 +69,12 @@ componentDidMount(){
                     </div>
                 <div className = "ContactElement">
                     <img src="https://image.flaticon.com/icons/svg/18/18609.svg"></img>
-                    <h1>info@cancionesdeinvierno.com</h1>            
+                    <h1>info@cancionesdeinvierno.es</h1>            
                 </div>                            
-                <div className = "ContactElement">
+                {/* <div className = "ContactElement">
                     <img src=" https://image.flaticon.com/icons/svg/0/191.svg"></img>   
                     <h1>+34-609278080</h1>                                 
-                </div>                   
+                </div>                    */}
                 </div>
         </div> 
     )}

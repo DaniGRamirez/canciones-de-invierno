@@ -6,7 +6,8 @@ import{
 } from "react-router-dom"
 import HeaderLink from './HeaderLink';
 
-const logoInstagram = "https://image.flaticon.com/icons/svg/733/733614.svg";
+const logoInstagram = "https://image.flaticon.com/icons/png/512/1384/1384015.png";
+const logoFacebook = "https://image.flaticon.com/icons/png/512/1384/1384005.png";
 
 class BurguerMenu extends Component {
   constructor (props) {
@@ -95,9 +96,14 @@ class BurguerMenu extends Component {
               <HeaderLink linkTo="/" elementIdScroll={"Ubicacion"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Ubicacion" />  
               <HeaderLink linkTo="/" elementIdScroll={"Contacto"} closeMenu={this.closeMenu} setElementIDHeader = {this.props.setElementIDHeader} text="Contacto" />
             </div>
-              <a target="blank" onClick={() => this.closeMenu()} className="menu-item--small" href="https://www.instagram.com/tomasgr.escultura/">
-              <img id="logoInsta" alt="logo" src = {logoInstagram}></img>
-            </a>             
+            <div className="socialMediaIconsBurger">
+              <a target="blank" onClick={() => this.closeMenu()} className="menu-item--small" href="https://www.instagram.com/cancionesdeinvierno/?hl=es">
+                <img id="logoInsta" alt="logo" src = {logoInstagram}></img>
+              </a>  
+              <a target="blank" onClick={() => this.closeMenu()} className="menu-item--small" href="https://www.facebook.com/cancionesdeinvierno">
+                <img id="logoFacebook" alt="logo" src = {logoFacebook}></img>
+              </a>             
+            </div>
             </Menu>
         </div>        
           ); 
