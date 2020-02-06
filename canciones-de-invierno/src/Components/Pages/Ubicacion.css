@@ -46,6 +46,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    align-items: center;
 }
 
 .descContainer p {    
@@ -62,6 +63,7 @@
     font-size: xx-large;
 }
 
+
 .descContainer a {    
     cursor: pointer;
     color: #eaeaea;
@@ -75,6 +77,10 @@
     color: #0d6cb4;    
 }
 
+
+#arenas360 a {
+    color: black;
+}
 
 @media (max-width: 1000px) {
     .descContainer p:first-of-type  {       

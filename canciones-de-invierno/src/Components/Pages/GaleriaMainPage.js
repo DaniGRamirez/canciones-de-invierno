@@ -24,9 +24,11 @@ class GaleriaMainPage extends Component {
             return (    
                 
                 <div className="GaleriaMainPageContainer">                    
-                    <h1>Galeria conciertos pasados</h1>
-                    {this.props.data.conciertoes.map (concierto => (                     
-                            <Galeria key={concierto.id} galeriaData= {concierto.galeriaFotos}/>                    
+                    <h1>Galería Conciertos</h1>
+                    {this.props.data.conciertoes.map (concierto => (                              
+                            <div className ="galeriaConcierto">                                                   
+                                <Galeria mostrarNombre="true" key={concierto.id} galeriaData= {concierto.galeriaFotos}/>                    
+                            </div>
                         ))
                         }
                 </div>)                

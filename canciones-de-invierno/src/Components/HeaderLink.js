@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import './HeaderLink.css';
 import {Link} from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 class HeaderLink extends Component {
 
@@ -15,6 +16,18 @@ class HeaderLink extends Component {
 
         console.log(document.getElementById(this.props.elementIdScroll))
         let scrollElement = document.getElementById(this.props.elementIdScroll);
+
+        const page = '/' + this.props.text;
+        const { location } = window;
+
+        console.log(`${location.origin}${page}`);
+        console.log(this.props.text);
+        ReactGA.set({
+          page,
+          location: `${location.origin}${page}`,
+          ...this.props.options
+        });
+        ReactGA.pageview(page);
 
         if(scrollElement === null)
         {

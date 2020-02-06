@@ -12,3 +12,14 @@
     border: none;
 }
 
+#tituloGaleria{
+    color: white;
+    font-size: large;
+}
+
+@media (max-width: 600px) {
+    #tituloGaleria{       
+        font-size: small;
+    }
+  }
+

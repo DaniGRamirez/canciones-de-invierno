@@ -29,7 +29,7 @@ const transporterCancionesInvierno = nodemailer.createTransport({
   secure: true,
   auth: {
     user: 'info@cancionesdeinvierno.es',
-    pass: 'elhornocaido'
+    pass: 'cdiehc'
   }
 });
 

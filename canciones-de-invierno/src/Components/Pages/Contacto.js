@@ -69,7 +69,7 @@ componentDidMount(){
                     </div>
                 <div className = "ContactElement">
                     <img src="https://image.flaticon.com/icons/svg/18/18609.svg"></img>
-                    <h1>info@cancionesdeinvierno.es</h1>            
+                    <h1> mail:-info@cancionesdeinvierno.es</h1>            
                 </div>                            
                 {/* <div className = "ContactElement">
                     <img src=" https://image.flaticon.com/icons/svg/0/191.svg"></img>   

@@ -55,33 +55,50 @@ class Galeria extends Component {
 
     console.log(this.props.galeriaData);
 
-    let ordererdGaleria = this.props.galeriaData.itemGaleria
-    .sort(function(a, b){      
-      if (a.prioridadOrden > b.prioridadOrden) {        
-        return 1;
-      }
-      if (a.prioridadOrden < b.prioridadOrden) {        
-        return -1;
+    if(!this.props.galeriaData)
+      return <div/>;
+
+      let nombreGaleria = <h3 id="tituloGaleria">{this.props.galeriaData.titulo}</h3>;
+      if(this.props.mostrarNombre === "false")
+        nombreGaleria = "";
+
+
+    let ordererdGaleria;
+    if(this.props.galeriaData)
+    {
+      if(this.props.galeriaData.itemGaleria.length > 0)
+      {  
+         ordererdGaleria = this.props.galeriaData.itemGaleria
+        .sort(function(a, b){      
+          if (a.prioridadOrden > b.prioridadOrden) {        
+            return 1;
+          }
+          if (a.prioridadOrden < b.prioridadOrden) {        
+            return -1;
+          }      
+          return 0;
+        })
       }      
-      return 0;
-    })
+    }
 
     console.log(ordererdGaleria);
 
-      if(this.props.galeriaData === null)
+      
+      if(ordererdGaleria === null)
       {
         console.log("galeria data is null -> render void div");
         return (<div/>);
 
       }
       else
-      {        
-        // console.log(this.props);
+      {              
         return(         
             <div  className="galeriaContent">                                               
                     {/* <h2> {this.props.galeriaData.titulo} </h2>     */}
+                    {nombreGaleria}
                     <Slider {...settings}>                      
-                      {ordererdGaleria.map (assetGallery => (                     
+                      {                       
+                        ordererdGaleria.map (assetGallery => (                     
                             this.renderGalleryItem(assetGallery)                  
                       ))
                       }           

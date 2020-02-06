@@ -28,10 +28,15 @@ class Ubicacion extends Component {
                     <div className="imgUbicacionBG">
                         <img src="https://media.graphcms.com/tV47KSVRqOGpceBuLfSw"/>
                         <div className="descBGOverlay">
-                            <div className="descContainer">{formatHtmlText(this.props.data.textoAsset.texto.html)}</div>
+                            <div className="descContainer">{formatHtmlText(this.props.data.textoAsset.texto.html)}
+                            <button id='arenas360'>
+                                <a target='blank' href="http://www.impulsa360.com/360/arenas360.html"> Ver Arenas en 360º </a>
+                            </button>
+                            </div>
                         </div>
+
                     </div>                 
-                    <Galeria key={this.props.data.galeriaFotos.id} galeriaData= {this.props.data.galeriaFotos}/>  
+                    <Galeria mostrarNombre="false" key={this.props.data.galeriaFotos.id} galeriaData= {this.props.data.galeriaFotos}/>  
                     <h2>Sitios Recomendados</h2>      
                     <div className="sitiosContainer">
                         {this.props.data.sitioRecomendadoes.map (sitio => (                     

@@ -10,7 +10,7 @@ import GaleriaMainPage from './Components/Pages/GaleriaMainPage'
 import Ubicacion from './Components/Pages/Ubicacion'
 import Contacto from './Components/Pages/Contacto'
 import Footer from './Components/Pages/Footer'
-
+import ReactGA from 'react-ga';
 
 import MainPage from './Components/Pages/MainPage'
 
@@ -19,6 +19,8 @@ import{
   Route, 
   Switch, 
 } from "react-router-dom"
+
+import GA from './GoogleAnalytics'
 
 var buttonTop;
 
@@ -49,6 +51,7 @@ render(){
 
     return (
       <Router>
+        { GA.init() && <GA.RouteTracker /> }
       <div className="AppContainer">
         <div className="ContentContainer">
             <Route>                                   
